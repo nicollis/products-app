@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "4891de32-7e3f-4089-960f-18c1a01c57b9",
+		"name": "Projects API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5134604"
+	},
+	"item": [
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/products/64ca933ed2c77cadcf40494a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products",
+						"64ca933ed2c77cadcf40494a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"quantity\": 1, \n    \"price\": 19.99, \n    \"category\": \"Tech\", \n    \"name\": \"New Product\",\n    \"description\": \"Our super awesome amazing item description!\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"quantity\": 3, \n    \"price\": 19.99, \n    \"category\": \"Tech\", \n    \"name\": \"New Product\",\n    \"description\": \"Our super awesome amazing item description now with batteries!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/products/64cbbaab66991262f416cb1f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products",
+						"64cbbaab66991262f416cb1f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/products/64cb466fe46cb2a27ec4984b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products",
+						"64cb466fe46cb2a27ec4984b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/products/search?query=super",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "super"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analytics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/products/analytics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products",
+						"analytics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
