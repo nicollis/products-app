@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+
+# Virtual environment
+venv/
+*.venv/
+env/
+
+# IDE - PyCharm, VS Code, etc.
+.idea/
+*.vscode/
+
+# Flask instance-specific folders and files
+instance/
+
+# SQLite database files (if you're using SQLite)
+*.db
+*.sqlite3
+
+# Log files
+*.log
+
+# pycache
+**/__pycache__/
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS specific
+.DS_Store  # For Mac
+*.swp      # Vim swap files
+Thumbs.db  # Windows thumbnail cache
+
+# Other commonly used Python tools
+*.env         # dotenv environment variables file
+*.pytest_cache/ # pytest cache directory
+celerybeat-schedule.db # Celery beat schedule database
+
+# Local DB files
+db/elasticsearch/data/
+db/mongo/data/

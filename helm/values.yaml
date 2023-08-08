@@ -1,0 +1,12 @@
+image:
+  repository: ollis/products-flask-api
+  tag: latest
+env:
+  ELASTICSEARCH_HOST: http://elasticsearch-service:9200
+  MONGO_HOST: mongodb-service:27017
+  MONGO_DB: products-db
+mongodb:
+  secretName: mongodb-secret
+  secretKeyUsername: username
+  secretKeyPassword: password
+  storageClass: local-storage

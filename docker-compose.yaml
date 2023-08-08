@@ -1,0 +1,46 @@
+version: '3.7'
+services:
+  app:
+    build: .
+    container_name: products-api
+    volumes:
+      - .:/app
+    ports:
+      - "5001:5000"
+    expose:
+      - "5001"
+    environment:
+      - ELASTICSEARCH_HOST=http://elasticsearch:9200
+      - MONGO_HOST=db:27017
+      - MONGO_USERNAME=root
+      - MONGO_PASSWORD=root
+      - MONGO_DB=products-db
+      - DEBUG=True
+    depends_on:
+      - db
+      - elasticsearch
+
+  db:
+    image: mongo:latest
+    container_name: mongo
+    volumes:
+      - ./db/mongo/data:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+
+  elasticsearch:
+    image: elasticsearch:8.7.1
+    container_name: elasticsearch
+    environment:
+      - network.bind_host=0.0.0.0
+      - network.host=0.0.0.0
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    volumes:
+      - ./db/elasticsearch/data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
